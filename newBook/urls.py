@@ -14,9 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls import url
 from django.urls import path
 from learn import views
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path(r'',views.index),
+    # 调取views.py页面函数返回的页面路径
+    url(r'^your$',views.hello)  #http://127.0.0.1:8001/your   '^'匹配路径开始+匹配路径名字字符等+'$'匹配路径结束
 ]
